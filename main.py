@@ -11,6 +11,14 @@ socketio = SocketIO(app)
 #homepage route
 @app.route("/", methods=["POST", "GET"])
 def home() :
+    if request.method == "POST":
+        name = request.form.get("name")
+        code = request.form.get("code")
+        join = request.form.get("join", False)
+        create = request.form.get("create", False)
+
+        
+
     return render_template("home.html")
 
 #roompage route
