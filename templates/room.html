@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="message-box">
+    <!-- room code -->
+    <h2>Chat Room: {{room}}</h2>
+    <!-- inject all messages from socket server - received -->
+    <div class="messages" id="messages"></div>
+    <!-- messages that we are sending -->
+    <div class="inputs">
+        <input type="text" name="message" id="message" rows="3" placeholder="Message" />
+        <button name="send" id="send-btn" onclick="sendMessage()">
+        Send
+        </button>
+    </div>
+</div>
+<script type="text/javascript">
+    var socketio = io();
+
+    const sendMessage = () => {
+        console.log("send")
+    }
+
+</script>
+{% endblock %}

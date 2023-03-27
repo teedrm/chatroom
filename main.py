@@ -57,6 +57,7 @@ def home():
     return render_template("home.html")
 
 #roompage route
+@app.route("/room")
 def room():
     #dont allow /room but has to join directly from join
     room = session.get("room")
